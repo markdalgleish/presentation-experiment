@@ -13,18 +13,14 @@ var gulp = require('gulp'),
   imagemin = require('gulp-imagemin'),
   pngcrush = require('imagemin-pngcrush'),
   through = require('through'),
-  opn = require('opn');
-
-var isDev = process.argv.indexOf('dev') > 0,
-  ifDev = function(stream) {
-    return isDev ? through() : stream;
-  };
+  opn = require('opn'),
+  isDev = process.argv.indexOf('dev') > 0;
 
 gulp.task('js', function() {
   return gulp.src('src/scripts/main.js')
     .pipe(plumber())
     .pipe(browserify({ transform: ['debowerify'], debug: isDev }))
-    .pipe(ifDev(uglify()))
+    .pipe(isDev ? through() : uglify()))
     .pipe(rename('build.js'))
     .pipe(gulp.dest('dist/build'))
     .pipe(connect.reload());
@@ -44,7 +40,7 @@ gulp.task('css', function() {
     .pipe(plumber())
     .pipe(rework(reworkNpm(), { sourcemap: isDev }))
     .pipe(autoprefixer('last 2 versions', { map: false }))
-    .pipe(ifDev(minifycss()))
+    .pipe(isDev ? through() : minifycss()))
     .pipe(rename('build.css'))
     .pipe(gulp.dest('dist/build'))
     .pipe(connect.reload());
@@ -52,7 +48,7 @@ gulp.task('css', function() {
 
 gulp.task('images', function() {
   return gulp.src('src/images/**/*')
-    .pipe(ifDev(imagemin({ progressive: true, use: [pngcrush()] })))
+    .pipe(isDev ? through() : imagemin({ progressive: true, use: [pngcrush()] })))
     .pipe(gulp.dest('dist/images'))
     .pipe(connect.reload());
 });
