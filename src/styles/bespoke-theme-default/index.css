@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;;
+}
+
+.bespoke-parent {
+    transition: background 1s ease;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    perspective: 600px;
+}
+
+.bespoke-slide {
+  transition: transform 1s ease, opacity 1s ease, background 1s ease;
+  transform-origin: 50% 50% 0;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 640px;
+  height: 480px;
+  position: absolute;
+  top: 50%;
+  margin-top: -240px;
+  left: 50%;
+  margin-left: -320px;
+  padding: 40px;
+  border-radius: 0;
+}
+
+.bespoke-before {
+  transform: translateX(-640px);
+}
+
+.bespoke-after {
+  transform: translateX(640px);
+}
+
+.bespoke-inactive {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bespoke-active {
+  opacity: 1;
+}

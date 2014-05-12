@@ -1,0 +1,19 @@
+{
+  "name": "presentation-experiment",
+  "version": "0.0.0",
+  "authors": [
+    "N/A"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "prism": "gh-pages"
+  }
+}

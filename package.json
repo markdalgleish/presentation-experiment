@@ -1,0 +1,31 @@
+{
+  "name": "presentation-experiment",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "rework-npm": "~0.6.1",
+    "gulp-rework": "~0.2.2",
+    "gulp": "~3.6.2",
+    "gulp-jade": "~0.5.0",
+    "gulp-connect": "~2.0.5",
+    "gulp-browserify": "~0.5.0",
+    "gulp-rename": "~1.2.0",
+    "gulp-clean": "~0.2.4",
+    "opn": "~0.1.1",
+    "gulp-plumber": "~0.6.1",
+    "debowerify": "~0.7.0",
+    "css-whitespace": "~1.1.0",
+    "gulp-imagemin": "~0.5.0",
+    "imagemin-pngcrush": "~0.1.0",
+    "gulp-uglify": "~0.3.0",
+    "through": "~2.3.4",
+    "gulp-minify-css": "~0.3.4",
+    "gulp-autoprefixer": "0.0.7"
+  }
+}
