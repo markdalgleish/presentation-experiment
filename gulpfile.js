@@ -20,7 +20,7 @@ gulp.task('js', function() {
   return gulp.src('src/scripts/main.js')
     .pipe(plumber())
     .pipe(browserify({ transform: ['debowerify'], debug: isDev }))
-    .pipe(isDev ? through() : uglify()))
+    .pipe(isDev ? through() : uglify())
     .pipe(rename('build.js'))
     .pipe(gulp.dest('dist/build'))
     .pipe(connect.reload());
@@ -40,7 +40,7 @@ gulp.task('css', function() {
     .pipe(plumber())
     .pipe(rework(reworkNpm(), { sourcemap: isDev }))
     .pipe(autoprefixer('last 2 versions', { map: false }))
-    .pipe(isDev ? through() : minifycss()))
+    .pipe(isDev ? through() : minifycss())
     .pipe(rename('build.css'))
     .pipe(gulp.dest('dist/build'))
     .pipe(connect.reload());
@@ -48,7 +48,7 @@ gulp.task('css', function() {
 
 gulp.task('images', function() {
   return gulp.src('src/images/**/*')
-    .pipe(isDev ? through() : imagemin({ progressive: true, use: [pngcrush()] })))
+    .pipe(isDev ? through() : imagemin({ progressive: true, use: [pngcrush()] }))
     .pipe(gulp.dest('dist/images'))
     .pipe(connect.reload());
 });
