@@ -74,6 +74,6 @@ gulp.task('watch', function() {
   gulp.watch('src/images/**/*', ['images']);
 });
 
-gulp.task('build', ['js', 'html', 'css', 'images']);
+gulp.task('build', ['clean', 'js', 'html', 'css', 'images']);
 gulp.task('dev', ['build', 'watch', 'serve']);
 gulp.task('default', ['build']);
