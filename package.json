@@ -8,6 +8,9 @@
   },
   "author": "",
   "license": "MIT",
+  "scripts": {
+    "dev": "gulp dev"
+  },
   "devDependencies": {
     "rework-npm": "~0.6.1",
     "gulp-rework": "~0.2.2",
