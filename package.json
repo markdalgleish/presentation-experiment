@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/markdalgleish/presentation-experiment.git"
   },
-  "author": "",
-  "license": "MIT",
   "scripts": {
     "dev": "gulp dev"
   },
+  "author": "",
+  "license": "MIT",
   "devDependencies": {
     "rework-npm": "~0.6.1",
     "gulp-rework": "~0.2.2",
@@ -29,6 +30,7 @@
     "gulp-uglify": "~0.3.0",
     "through": "~2.3.4",
     "gulp-minify-css": "~0.3.4",
-    "gulp-autoprefixer": "0.0.7"
+    "gulp-autoprefixer": "0.0.7",
+    "gulp-gh-pages": "~0.2.0"
   }
 }

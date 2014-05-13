@@ -1,4 +1,5 @@
-var gulp = require('gulp'),
+var pkg = require('./package.json'),
+  gulp = require('gulp'),
   plumber = require('gulp-plumber'),
   clean = require('gulp-clean'),
   rename = require('gulp-rename'),
@@ -14,6 +15,7 @@ var gulp = require('gulp'),
   pngcrush = require('imagemin-pngcrush'),
   through = require('through'),
   opn = require('opn'),
+  ghpages = require('gulp-gh-pages'),
   isDev = process.argv.indexOf('dev') > 0;
 
 gulp.task('js', function() {
@@ -72,6 +74,11 @@ gulp.task('watch', function() {
   gulp.watch('src/styles/**/*.css', ['css']);
   gulp.watch('src/scripts/**/*.js', ['js']);
   gulp.watch('src/images/**/*', ['images']);
+});
+
+gulp.task('deploy', ['build'], function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghpages({ remoteUrl: pkg.repository.url }));
 });
 
 gulp.task('build', ['clean', 'js', 'html', 'css', 'images']);
