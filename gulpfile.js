@@ -15,7 +15,8 @@ var pkg = require('./package.json'),
   pngcrush = require('imagemin-pngcrush'),
   through = require('through'),
   opn = require('opn'),
-  ghpages = require('gulp-gh-pages'),
+  ghpages = require('gh-pages'),
+  path = require('path'),
   isDev = process.argv.indexOf('dev') > 0;
 
 gulp.task('js', function() {
@@ -76,9 +77,11 @@ gulp.task('watch', function() {
   gulp.watch('src/images/**/*', ['images']);
 });
 
-gulp.task('deploy', ['build'], function() {
-  return gulp.src('./dist/**/*')
-    .pipe(ghpages({ remoteUrl: pkg.repository.url }));
+gulp.task('deploy', function(done) {
+  ghpages.publish({
+    base: path.join(__dirname, 'dist'),
+    logger: console.log.bind(console)
+  }, done);
 });
 
 gulp.task('build', ['clean', 'js', 'html', 'css', 'images']);
