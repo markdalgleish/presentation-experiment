@@ -13,6 +13,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "bespoke": "^1.0.0",
+    "bespoke-keys": "^1.0.0",
     "rework-npm": "~0.6.1",
     "gulp-rework": "~0.2.2",
     "gulp": "~3.6.2",

@@ -1,5 +1,5 @@
-var bespoke = require('./bespoke'),
-  keys = require('./bespoke-keys'),
+var bespoke = require('bespoke'),
+  keys = require('bespoke-keys'),
   touch = require('./bespoke-touch');
 
 // Bespoke.js
