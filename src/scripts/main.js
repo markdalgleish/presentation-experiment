@@ -1,6 +1,6 @@
 var bespoke = require('bespoke'),
   keys = require('bespoke-keys'),
-  touch = require('./bespoke-touch');
+  touch = require('bespoke-touch');
 
 // Bespoke.js
 bespoke.from('article', [
