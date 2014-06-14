@@ -16,6 +16,7 @@
     "bespoke": "^1.0.0",
     "bespoke-bullets": "^1.0.0-beta",
     "bespoke-keys": "^1.0.0",
+    "bespoke-scale": "^1.0.0-beta",
     "bespoke-touch": "^1.0.0",
     "css-whitespace": "~1.1.0",
     "debowerify": "~0.7.0",

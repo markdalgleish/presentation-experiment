@@ -64,3 +64,11 @@ ul, ol, li {
 .bespoke-bullet-inactive {
   opacity: 0;
 }
+
+.bespoke-scale-parent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
