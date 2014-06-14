@@ -50,3 +50,17 @@
 .bespoke-active {
   opacity: 1;
 }
+
+ul, ol, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.bespoke-bullet {
+  transition: opacity 1s ease;
+}
+
+.bespoke-bullet-inactive {
+  opacity: 0;
+}
