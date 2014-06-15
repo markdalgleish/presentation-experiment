@@ -15,8 +15,10 @@
   "devDependencies": {
     "bespoke": "^1.0.0",
     "bespoke-bullets": "^1.0.0-beta",
+    "bespoke-forms": "^1.0.0-beta",
     "bespoke-hash": "^1.0.0-beta",
     "bespoke-keys": "^1.0.0",
+    "bespoke-loop": "^1.0.0-beta",
     "bespoke-progress": "^1.0.0-beta",
     "bespoke-scale": "^1.0.0-beta",
     "bespoke-touch": "^1.0.0",
