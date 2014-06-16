@@ -2,16 +2,20 @@
   box-sizing: border-box;;
 }
 
+body {
+  color: black;
+}
+
 .bespoke-parent {
-    transition: background 1s ease;
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: hidden;
-    perspective: 600px;
+  transition: background 1s ease;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  perspective: 600px;
 }
 
 .bespoke-slide {

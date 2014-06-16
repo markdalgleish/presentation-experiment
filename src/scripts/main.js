@@ -1,4 +1,5 @@
 var bespoke = require('bespoke'),
+  exampleTheme = require('./bespoke-theme-example/index.js'),
   vcr = require('bespoke-vcr'),
   keys = require('bespoke-keys'),
   touch = require('bespoke-touch'),
@@ -11,6 +12,7 @@ var bespoke = require('bespoke'),
 
 // Bespoke.js
 bespoke.from('article', [
+  exampleTheme(),
   vcr(),
   keys(),
   touch(),

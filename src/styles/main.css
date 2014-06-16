@@ -1,2 +1,6 @@
-@import './src/styles/bespoke-theme-default';
 @import './bower_components/prism/themes/prism-okaidia.css';
+
+/* Example theme override */
+.bespoke-progress-parent {
+  height: 2px;
+}

@@ -22,7 +22,7 @@ var pkg = require('./package.json'),
 gulp.task('js', function() {
   return gulp.src('src/scripts/main.js')
     .pipe(plumber())
-    .pipe(browserify({ transform: ['debowerify'], debug: isDev }))
+    .pipe(browserify({ transform: ['brfs', 'debowerify'], debug: isDev }))
     .pipe(isDev ? through() : uglify())
     .pipe(rename('build.js'))
     .pipe(gulp.dest('dist/build'))
