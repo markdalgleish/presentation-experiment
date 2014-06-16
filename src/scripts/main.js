@@ -1,4 +1,5 @@
 var bespoke = require('bespoke'),
+  vcr = require('bespoke-vcr'),
   keys = require('bespoke-keys'),
   touch = require('bespoke-touch'),
   bullets = require('bespoke-bullets'),
@@ -10,6 +11,7 @@ var bespoke = require('bespoke'),
 
 // Bespoke.js
 bespoke.from('article', [
+  vcr(),
   keys(),
   touch(),
   bullets('li, .bullet'),

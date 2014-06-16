@@ -22,6 +22,7 @@
     "bespoke-progress": "^1.0.0-beta",
     "bespoke-scale": "^1.0.0-beta",
     "bespoke-touch": "^1.0.0",
+    "bespoke-vcr": "0.1.0-beta",
     "css-whitespace": "~1.1.0",
     "debowerify": "~0.7.0",
     "gh-pages": "git://github.com/markdalgleish/gh-pages.git#add-publish-method",
