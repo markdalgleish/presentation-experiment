@@ -22,6 +22,7 @@
     "bespoke-loop": "^1.0.0-beta",
     "bespoke-progress": "^1.0.0-beta",
     "bespoke-scale": "^1.0.0-beta",
+    "bespoke-state": "^1.0.0-beta",
     "bespoke-touch": "^1.0.0",
     "bespoke-vcr": "0.1.0-beta",
     "brfs": "^1.1.1",
