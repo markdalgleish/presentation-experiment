@@ -1,5 +1,5 @@
 var fs = require('fs');
-var classes = require('../bespoke-classes');
+var classes = require('bespoke-classes');
 var insertCss = require('insert-css');
 
 module.exports = function() {
