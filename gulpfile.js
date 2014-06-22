@@ -22,7 +22,7 @@ var pkg = require('./package.json'),
 gulp.task('js', function() {
   return gulp.src('src/scripts/main.js')
     .pipe(plumber())
-    .pipe(browserify({ transform: ['brfs', 'debowerify'], debug: isDev }))
+    .pipe(browserify({ transform: ['debowerify'], debug: isDev }))
     .pipe(isDev ? through() : uglify())
     .pipe(rename('build.js'))
     .pipe(gulp.dest('dist/build'))
@@ -61,7 +61,7 @@ gulp.task('clean', function() {
     .pipe(clean());
 });
 
-gulp.task('serve', function(done) {
+gulp.task('serve', ['build'], function(done) {
   connect.server({
     root: 'dist',
     livereload: true
@@ -84,6 +84,6 @@ gulp.task('deploy', function(done) {
   }, done);
 });
 
-gulp.task('build', ['clean', 'js', 'html', 'css', 'images']);
-gulp.task('dev', ['build', 'watch', 'serve']);
-gulp.task('default', ['build']);
+gulp.task('build', ['js', 'html', 'css', 'images']);
+gulp.task('dev', ['serve', 'watch']);
+gulp.task('default', ['clean', 'build']);

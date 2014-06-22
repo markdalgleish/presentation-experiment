@@ -2,17 +2,5 @@
 
 /* Example theme override */
 .bespoke-progress-parent {
-  height: 2px;
-}
-
-.code .bespoke-progress-bar {
-  background: white;
-}
-
-.bespoke-parent {
-  transition: none;
-}
-
-.bespoke-parent.code {
-  background: #272822;
+  height: 4px;
 }
