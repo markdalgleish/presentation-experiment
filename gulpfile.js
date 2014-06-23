@@ -7,8 +7,7 @@ var pkg = require('./package.json'),
   browserify = require('gulp-browserify'),
   uglify = require('gulp-uglify'),
   jade = require('gulp-jade'),
-  rework = require('gulp-rework'),
-  reworkNpm = require('rework-npm'),
+  stylus = require('gulp-stylus'),
   autoprefixer = require('gulp-autoprefixer'),
   minifycss = require('gulp-minify-css'),
   imagemin = require('gulp-imagemin'),
@@ -39,9 +38,13 @@ gulp.task('html', function() {
 });
 
 gulp.task('css', function() {
-  return gulp.src('src/styles/main.css')
+  return gulp.src('src/styles/main.styl')
     .pipe(plumber())
-    .pipe(rework(reworkNpm(), { sourcemap: isDev }))
+    .pipe(stylus({
+      // Allow CSS to be imported from bower_components
+      'include css': true,
+      'paths': ['./bower_components']
+    }))
     .pipe(autoprefixer('last 2 versions', { map: false }))
     .pipe(isDev ? through() : minifycss())
     .pipe(rename('build.css'))

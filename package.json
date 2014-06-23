@@ -39,12 +39,11 @@
     "gulp-minify-css": "~0.3.4",
     "gulp-plumber": "~0.6.1",
     "gulp-rename": "~1.2.0",
-    "gulp-rework": "~0.2.2",
+    "gulp-stylus": "^1.0.2",
     "gulp-uglify": "~0.3.0",
     "imagemin-pngcrush": "~0.1.0",
     "insert-css": "^0.2.0",
     "opn": "~0.1.1",
-    "rework-npm": "~0.6.1",
     "through": "~2.3.4"
   }
 }
