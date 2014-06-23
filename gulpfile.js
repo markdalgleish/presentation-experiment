@@ -52,7 +52,7 @@ gulp.task('css', function() {
     .pipe(connect.reload());
 });
 
-gulp.task('images', function() {
+gulp.task('images', ['clean:images'], function() {
   return gulp.src('src/images/**/*')
     .pipe(isDev ? through() : imagemin({ progressive: true, use: [pngcrush()] }))
     .pipe(gulp.dest('dist/images'))
@@ -61,6 +61,11 @@ gulp.task('images', function() {
 
 gulp.task('clean', function() {
   return gulp.src('dist')
+    .pipe(clean());
+});
+
+gulp.task('clean:images', function() {
+  return gulp.src('dist/images', { read: false })
     .pipe(clean());
 });
 
