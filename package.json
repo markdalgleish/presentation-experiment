@@ -23,7 +23,7 @@
     "bespoke-progress": "^1.0.0-beta",
     "bespoke-scale": "^1.0.0-beta",
     "bespoke-state": "^1.0.0-beta",
-    "bespoke-theme-cube": "git://github.com/markdalgleish/bespoke-theme-cube",
+    "bespoke-theme-cube": "^1.0.0-beta",
     "bespoke-touch": "^1.0.0",
     "bespoke-vcr": "0.1.0-beta",
     "css-whitespace": "~1.1.0",
