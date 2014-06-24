@@ -16,7 +16,7 @@ var pkg = require('./package.json'),
   opn = require('opn'),
   ghpages = require('gh-pages'),
   path = require('path'),
-  isDev = process.argv.indexOf('dev') > 0;
+  isDev = process.argv.indexOf('serve') > 0;
 
 gulp.task('js', function() {
   return gulp.src('src/scripts/main.js')
@@ -69,7 +69,7 @@ gulp.task('clean:images', function() {
     .pipe(clean());
 });
 
-gulp.task('serve', ['build'], function(done) {
+gulp.task('preview', ['build'], function(done) {
   connect.server({
     root: 'dist',
     livereload: true
@@ -93,5 +93,5 @@ gulp.task('deploy', function(done) {
 });
 
 gulp.task('build', ['js', 'html', 'css', 'images']);
-gulp.task('dev', ['serve', 'watch']);
+gulp.task('serve', ['preview', 'watch']);
 gulp.task('default', ['clean', 'build']);

@@ -8,7 +8,7 @@
     "url": "git://github.com/markdalgleish/presentation-experiment.git"
   },
   "scripts": {
-    "dev": "gulp dev"
+    "serve": "gulp serve"
   },
   "author": "",
   "license": "MIT",
