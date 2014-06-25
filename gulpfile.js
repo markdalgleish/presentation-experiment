@@ -21,7 +21,7 @@ var pkg = require('./package.json'),
 
 gulp.task('js', function() {
   return gulp.src('src/scripts/main.js')
-    .pipe(plumber())
+    .pipe(isDist ? through() : plumber())
     .pipe(browserify({ transform: ['debowerify'], debug: !isDist }))
     .pipe(isDist ? uglify() : through())
     .pipe(rename('build.js'))
@@ -31,7 +31,7 @@ gulp.task('js', function() {
 
 gulp.task('html', function() {
   return gulp.src('src/index.jade')
-    .pipe(plumber())
+    .pipe(isDist ? through() : plumber())
     .pipe(jade({ pretty: true }))
     .pipe(rename('index.html'))
     .pipe(gulp.dest('dist'))
@@ -40,7 +40,7 @@ gulp.task('html', function() {
 
 gulp.task('css', function() {
   return gulp.src('src/styles/main.styl')
-    .pipe(plumber())
+    .pipe(isDist ? through() : plumber())
     .pipe(stylus({
       // Allow CSS to be imported from bower_components
       'include css': true,
