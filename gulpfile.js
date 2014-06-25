@@ -10,7 +10,7 @@ var pkg = require('./package.json'),
   jade = require('gulp-jade'),
   stylus = require('gulp-stylus'),
   autoprefixer = require('gulp-autoprefixer'),
-  minifycss = require('gulp-minify-css'),
+  csso = require('gulp-csso'),
   imagemin = require('gulp-imagemin'),
   pngcrush = require('imagemin-pngcrush'),
   through = require('through'),
@@ -47,7 +47,7 @@ gulp.task('css', function() {
       'paths': ['./bower_components']
     }))
     .pipe(autoprefixer('last 2 versions', { map: false }))
-    .pipe(isDist ? minifycss() : through())
+    .pipe(isDist ? csso() : through())
     .pipe(rename('build.css'))
     .pipe(gulp.dest('dist/build'))
     .pipe(connect.reload());
