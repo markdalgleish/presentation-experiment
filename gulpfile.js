@@ -81,7 +81,7 @@ gulp.task('preview', ['build'], function(done) {
 
 gulp.task('watch', function() {
   gulp.watch('src/**/*.jade', ['html']);
-  gulp.watch('src/styles/**/*.css', ['css']);
+  gulp.watch('src/styles/**/*.styl', ['css']);
   gulp.watch('src/scripts/**/*.js', ['js']);
   gulp.watch('src/images/**/*', ['images']);
 });
