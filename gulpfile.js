@@ -85,7 +85,7 @@ gulp.task('watch', function() {
   gulp.watch('src/images/**/*', ['images']);
 });
 
-gulp.task('deploy', function(done) {
+gulp.task('deploy', ['build'], function(done) {
   ghpages.publish({
     base: path.join(__dirname, 'dist'),
     logger: console.log.bind(console)
