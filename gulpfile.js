@@ -1,5 +1,6 @@
 var pkg = require('./package.json'),
   gulp = require('gulp'),
+  gutil = require('gulp-util'),
   plumber = require('gulp-plumber'),
   clean = require('gulp-clean'),
   rename = require('gulp-rename'),
@@ -88,7 +89,7 @@ gulp.task('watch', function() {
 gulp.task('deploy', ['build'], function(done) {
   ghpages.publish({
     base: path.join(__dirname, 'dist'),
-    logger: console.log.bind(console)
+    logger: gutil.log
   }, done);
 });
 
