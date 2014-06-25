@@ -27,4 +27,5 @@ bespoke.from('article', [
 ]);
 
 // Prism syntax highlighting
+// Note: This is loaded from "bower_components" thanks to debowerify
 require('prism');
