@@ -17,13 +17,13 @@ var pkg = require('./package.json'),
   opn = require('opn'),
   ghpages = require('gh-pages'),
   path = require('path'),
-  isDev = process.argv.indexOf('serve') > 0;
+  isDist = process.argv.indexOf('serve') === -1;
 
 gulp.task('js', function() {
   return gulp.src('src/scripts/main.js')
     .pipe(plumber())
-    .pipe(browserify({ transform: ['debowerify'], debug: isDev }))
-    .pipe(isDev ? through() : uglify())
+    .pipe(browserify({ transform: ['debowerify'], debug: !isDist }))
+    .pipe(isDist ? uglify() : through())
     .pipe(rename('build.js'))
     .pipe(gulp.dest('dist/build'))
     .pipe(connect.reload());
@@ -47,7 +47,7 @@ gulp.task('css', function() {
       'paths': ['./bower_components']
     }))
     .pipe(autoprefixer('last 2 versions', { map: false }))
-    .pipe(isDev ? through() : minifycss())
+    .pipe(isDist ? minifycss() : through())
     .pipe(rename('build.css'))
     .pipe(gulp.dest('dist/build'))
     .pipe(connect.reload());
@@ -55,7 +55,7 @@ gulp.task('css', function() {
 
 gulp.task('images', ['clean:images'], function() {
   return gulp.src('src/images/**/*')
-    .pipe(isDev ? through() : imagemin({ progressive: true, use: [pngcrush()] }))
+    .pipe(isDist ? imagemin({ progressive: true, use: [pngcrush()] }) : through())
     .pipe(gulp.dest('dist/images'))
     .pipe(connect.reload());
 });
