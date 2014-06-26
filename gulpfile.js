@@ -70,7 +70,7 @@ gulp.task('clean:images', function() {
     .pipe(clean());
 });
 
-gulp.task('preview', ['build'], function(done) {
+gulp.task('connect', ['build'], function(done) {
   connect.server({
     root: 'dist',
     livereload: true
@@ -94,5 +94,5 @@ gulp.task('deploy', ['build'], function(done) {
 });
 
 gulp.task('build', ['js', 'html', 'css', 'images']);
-gulp.task('serve', ['preview', 'watch']);
+gulp.task('serve', ['connect', 'watch']);
 gulp.task('default', ['clean', 'build']);
