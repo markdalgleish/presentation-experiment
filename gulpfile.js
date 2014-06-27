@@ -82,8 +82,11 @@ gulp.task('connect', ['build'], function(done) {
 gulp.task('watch', function() {
   gulp.watch('src/**/*.jade', ['html']);
   gulp.watch('src/styles/**/*.styl', ['css']);
-  gulp.watch('src/scripts/**/*.js', ['js']);
   gulp.watch('src/images/**/*', ['images']);
+  gulp.watch([
+    'src/scripts/**/*.js',
+    'bespoke-theme-*/dist/*.js' // Allow themes to be developed in parallel
+  ], ['js']);
 });
 
 gulp.task('deploy', ['build'], function(done) {
