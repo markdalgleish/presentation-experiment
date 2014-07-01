@@ -90,10 +90,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('deploy', ['build'], function(done) {
-  ghpages.publish({
-    base: path.join(__dirname, 'dist'),
-    logger: gutil.log
-  }, done);
+  ghpages.publish(path.join(__dirname, 'dist'), { logger: gutil.log }, done);
 });
 
 gulp.task('build', ['js', 'html', 'css', 'images']);
