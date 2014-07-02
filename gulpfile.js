@@ -11,6 +11,7 @@ var pkg = require('./package.json'),
   stylus = require('gulp-stylus'),
   autoprefixer = require('gulp-autoprefixer'),
   csso = require('gulp-csso'),
+  cache = require('gulp-cache'),
   imagemin = require('gulp-imagemin'),
   pngcrush = require('imagemin-pngcrush'),
   through = require('through'),
@@ -55,7 +56,7 @@ gulp.task('css', function() {
 
 gulp.task('images', ['clean:images'], function() {
   return gulp.src('src/images/**/*')
-    .pipe(isDist ? imagemin({ progressive: true, use: [pngcrush()] }) : through())
+    .pipe(isDist ? cache(imagemin({ progressive: true, interlaced: true, use: [pngcrush()] })) : through())
     .pipe(gulp.dest('dist/images'))
     .pipe(connect.reload());
 });
