@@ -2,7 +2,7 @@ var pkg = require('./package.json'),
   gulp = require('gulp'),
   gutil = require('gulp-util'),
   plumber = require('gulp-plumber'),
-  clean = require('gulp-clean'),
+  rimraf = require('gulp-rimraf'),
   rename = require('gulp-rename'),
   connect = require('gulp-connect'),
   browserify = require('gulp-browserify'),
@@ -63,12 +63,12 @@ gulp.task('images', ['clean:images'], function() {
 
 gulp.task('clean', function() {
   return gulp.src('dist')
-    .pipe(clean());
+    .pipe(rimraf());
 });
 
 gulp.task('clean:images', function() {
   return gulp.src('dist/images', { read: false })
-    .pipe(clean());
+    .pipe(rimraf());
 });
 
 gulp.task('connect', ['build'], function(done) {
